@@ -1,0 +1,75 @@
+<mat-card class="new-contact-card">
+  <mat-card-title>Contact</mat-card-title>
+  <form class="new-contact-form" name="contact" (ngSubmit)="addContact(contactForm)" #contactForm="ngForm">
+    <mat-form-field class="new-contact-full-width">
+      <mat-label>Name</mat-label>
+      <input
+        name="name"
+        matInput
+        placeholder="Ex. Richard Topper"
+        [(ngModel)]="model.name"
+        #name="ngModel"
+        required
+      >
+
+      <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="new-contact-full-width">
+      <mat-label>Email</mat-label>
+      <input
+        name="email"
+        matInput
+        type="email"
+        placeholder="Ex. rtopper@email.com"
+        [(ngModel)]="model.email"
+        #email="ngModel"
+        required
+      >
+      <mat-error *ngIf="email.invalid && (email.dirty || email.touched) && email.errors.required">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="new-contact-full-width">
+      <mat-label>Phone</mat-label>
+      <input
+        name="phone"
+        matInput
+        placeholder="Ex. 5537989892146"
+        [(ngModel)]="model.phone"
+        #phone="ngModel"
+        required
+      >
+
+      <mat-error *ngIf="phone.invalid && (phone.dirty || phone.touched) && phone.errors.required">
+        Phone is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="new-contact-full-width">
+      <mat-label>Address</mat-label>
+      <input
+        name="address"
+        matInput
+        placeholder="Ex. Street 3, Pomodore"
+        [(ngModel)]="model.address"
+        #address="ngModel"
+        required
+      >
+      <mat-error *ngIf="address.invalid && (address.dirty || address.touched) && address.errors.required">
+        Address is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <button
+      type="submit"
+      mat-raised-button color="primary"
+      [disabled]="!contactForm.form.valid"
+    >
+      Save
+    </button>
+  </form>
+</mat-card>
