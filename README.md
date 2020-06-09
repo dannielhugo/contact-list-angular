@@ -1,6 +1,6 @@
 # Contact List
 
-This is a project made in my Front-end Development MBA. It just create a simple Bookstore where you can add, list and remove books.
+This is a project made in my Front-end Development MBA. It just create a simple Contact List where you can add, list and remove contacts.
 
 This is part of Javascript Architecture - AJS-201A discipline.
 
